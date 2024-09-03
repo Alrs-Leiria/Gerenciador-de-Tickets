@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GerenciadorDeTickets.Views
 {
-    public partial class frmInicio : Form
+    public partial class FrmInicio : Form
     {
-        public frmInicio()
+        public FrmInicio()
         {
             InitializeComponent();
         }

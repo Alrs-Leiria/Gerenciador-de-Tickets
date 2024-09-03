@@ -16,7 +16,7 @@ namespace GerenciadorDeTickets
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmGerenciador());
+            Application.Run(new FrmGerenciador());
         }
     }
 }

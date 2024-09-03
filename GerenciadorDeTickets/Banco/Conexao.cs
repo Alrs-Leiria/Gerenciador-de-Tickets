@@ -35,17 +35,16 @@ namespace GerenciadorDeTickets.Banco
             {
                 Console.WriteLine("Erro ao abrir a conexão: " + ex.Message);
             }
-
-            //MessageBox.Show("Conexao realizada com sucesso!");
             return connection;
         }
         public static void FecharConexao()
         {
             try
             {
-
-                connection.Close();
-
+                if (connection.State == System.Data.ConnectionState.Open)
+                {
+                    connection.Close();
+                }
             }
             catch (Exception ex)
             {

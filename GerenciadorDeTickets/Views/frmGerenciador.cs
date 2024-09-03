@@ -14,9 +14,9 @@ using GerenciadorDeTickets.Views;
 
 namespace GerenciadorDeTickets
 {
-    public partial class frmGerenciador : Form
+    public partial class FrmGerenciador : Form
     {
-        public frmGerenciador()
+        public FrmGerenciador()
         {
             InitializeComponent();
         }
@@ -28,7 +28,7 @@ namespace GerenciadorDeTickets
 
         private void funcionariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmFuncionario FrmFuncionario = new frmFuncionario();
+            FrmFuncionarioListagem FrmFuncionario = new FrmFuncionarioListagem();
             FrmFuncionario.ShowDialog();
         }
     }

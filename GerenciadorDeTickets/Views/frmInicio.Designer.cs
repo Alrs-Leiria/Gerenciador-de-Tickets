@@ -1,6 +1,6 @@
 ﻿namespace GerenciadorDeTickets.Views
 {
-    partial class frmInicio
+    partial class FrmInicio
     {
         /// <summary>
         /// Required designer variable.
