@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GerenciadorDeTickets.Models;
+using GerenciadorDeTickets.Presenter;
+using GerenciadorDeTickets._Repositories;
+using GerenciadorDeTickets.Views;
+using MySql.Data.MySqlClient;
+using GerenciadorDeTickets.Banco;
+
 
 namespace GerenciadorDeTickets
 {
@@ -16,7 +23,13 @@ namespace GerenciadorDeTickets
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmGerenciador());
+
+            string sqlConnectionString = "Server=localhost;user=root;password=1234;database=gerenciador;";
+            IPrincipalView view = new PrincipalView();
+
+            new PrincipalPresenter(view, sqlConnectionString);
+
+            Application.Run((Form) view);
         }
     }
 }

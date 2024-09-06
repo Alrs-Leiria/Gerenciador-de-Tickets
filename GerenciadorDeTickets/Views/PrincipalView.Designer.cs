@@ -1,6 +1,6 @@
 ﻿namespace GerenciadorDeTickets
 {
-    partial class FrmGerenciador
+    partial class PrincipalView
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.funcionariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miFuncionarios = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ticketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,37 +53,37 @@
             this.configuraçõesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(703, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // cadastrosToolStripMenuItem
             // 
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.funcionariosToolStripMenuItem,
+            this.miFuncionarios,
             this.usuáriosToolStripMenuItem,
             this.ticketsToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
-            // funcionariosToolStripMenuItem
+            // miFuncionarios
             // 
-            this.funcionariosToolStripMenuItem.Name = "funcionariosToolStripMenuItem";
-            this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.funcionariosToolStripMenuItem.Text = "Funcionarios";
-            this.funcionariosToolStripMenuItem.Click += new System.EventHandler(this.funcionariosToolStripMenuItem_Click);
+            this.miFuncionarios.Name = "miFuncionarios";
+            this.miFuncionarios.Size = new System.Drawing.Size(180, 22);
+            this.miFuncionarios.Text = "Funcionarios";
             // 
             // usuáriosToolStripMenuItem
             // 
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuáriosToolStripMenuItem.Text = "Usuários";
             // 
             // ticketsToolStripMenuItem
             // 
             this.ticketsToolStripMenuItem.Name = "ticketsToolStripMenuItem";
-            this.ticketsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ticketsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ticketsToolStripMenuItem.Text = "Tickets";
             // 
             // relatoriosToolStripMenuItem
@@ -91,13 +91,13 @@
             this.relatoriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ticketsEntreguesToolStripMenuItem});
             this.relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
-            this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
+            this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.relatoriosToolStripMenuItem.Text = "Relatorios";
             // 
             // ticketsEntreguesToolStripMenuItem
             // 
             this.ticketsEntreguesToolStripMenuItem.Name = "ticketsEntreguesToolStripMenuItem";
-            this.ticketsEntreguesToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.ticketsEntreguesToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.ticketsEntreguesToolStripMenuItem.Text = "Tickets entregues";
             // 
             // configuraçõesToolStripMenuItem
@@ -106,31 +106,33 @@
             this.geralToolStripMenuItem,
             this.conexãoToolStripMenuItem});
             this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
-            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
+            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
             this.configuraçõesToolStripMenuItem.Text = "Configurações";
             // 
             // geralToolStripMenuItem
             // 
             this.geralToolStripMenuItem.Name = "geralToolStripMenuItem";
-            this.geralToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.geralToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.geralToolStripMenuItem.Text = "Geral";
             // 
             // conexãoToolStripMenuItem
             // 
             this.conexãoToolStripMenuItem.Name = "conexãoToolStripMenuItem";
-            this.conexãoToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.conexãoToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.conexãoToolStripMenuItem.Text = "Conexão";
             // 
-            // frmGerenciador
+            // PrincipalView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(703, 465);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "frmGerenciador";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "PrincipalView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciador";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -145,7 +147,7 @@
         private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatoriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem funcionariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miFuncionarios;
         private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ticketsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ticketsEntreguesToolStripMenuItem;

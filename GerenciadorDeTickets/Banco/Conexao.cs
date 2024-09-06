@@ -21,7 +21,7 @@ namespace GerenciadorDeTickets.Banco
         
         public static MySqlConnection AbrirConexao()
         {
-            data = $"Server={server};username={username};password={password};database={databse};";
+            data = $"Server={server};username{username};password={password};database={databse};";
 
             try
             {
@@ -29,6 +29,7 @@ namespace GerenciadorDeTickets.Banco
                 if(connection.State == System.Data.ConnectionState.Closed)
                 {
                     connection.Open();
+                    MessageBox.Show("Conexao realizada!");
                 }                            
             }
             catch (Exception ex)
@@ -37,20 +38,20 @@ namespace GerenciadorDeTickets.Banco
             }
             return connection;
         }
-        public static void FecharConexao()
-        {
-            try
-            {
-                if (connection.State == System.Data.ConnectionState.Open)
-                {
-                    connection.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Erro ao fechar a conexão: " + ex.Message);
-            }
-        }
+        //public static void FecharConexao()
+        //{
+        //    try
+        //    {
+        //        if (connection.State == System.Data.ConnectionState.Open)
+        //        {
+        //            connection.Close();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine("Erro ao fechar a conexão: " + ex.Message);
+        //    }
+        //}
 
         public static MySqlConnection GetConnection()
         {

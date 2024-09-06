@@ -14,22 +14,23 @@ using GerenciadorDeTickets.Views;
 
 namespace GerenciadorDeTickets
 {
-    public partial class FrmGerenciador : Form
+    public partial class PrincipalView : Form, IPrincipalView
     {
-        public FrmGerenciador()
+
+        public PrincipalView()
         {
             InitializeComponent();
+            AssociateAndRaiseViewEvents();
+
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void AssociateAndRaiseViewEvents()
         {
+            miFuncionarios.Click += delegate { ShowFuncionarioView?.Invoke(this, EventArgs.Empty); };
 
         }
+        public event EventHandler ShowFuncionarioView;
+        public event EventHandler ShowTicketView;
 
-        private void funcionariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmFuncionarioListagem FrmFuncionario = new FrmFuncionarioListagem();
-            FrmFuncionario.ShowDialog();
-        }
     }
 }
