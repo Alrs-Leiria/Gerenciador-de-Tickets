@@ -27,6 +27,7 @@ namespace GerenciadorDeTickets
         private void AssociateAndRaiseViewEvents()
         {
             miFuncionarios.Click += delegate { ShowFuncionarioView?.Invoke(this, EventArgs.Empty); };
+            miTickets.Click      += delegate { ShowTicketView?.Invoke(this, EventArgs.Empty); };
 
         }
         public event EventHandler ShowFuncionarioView;

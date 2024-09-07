@@ -22,13 +22,12 @@ namespace GerenciadorDeTickets.Presenter
             this.view = view;
             this.repository = repository;
             this.funcionarioBindingSource = new BindingSource();
-
-            
+        
             this.view.AddNewEvent += AddNewFuncionario;
             this.view.CancelEvent += CancelAction;
             this.view.SearchEvent += SearchFuncionario;
-            this.view.EditEvent += LoadSelectedFuncionarioToEdit;
-            this.view.SaveEvent += SavePet;
+            this.view.EditEvent   += LoadSelectedFuncionarioToEdit;
+            this.view.SaveEvent   += SaveFuncionario;
 
             this.view.SetFuncionarioBidingSource(funcionarioBindingSource);
 
@@ -45,15 +44,15 @@ namespace GerenciadorDeTickets.Presenter
         private void LoadSelectedFuncionarioToEdit(object sender, EventArgs e)
         {
             var funcionario = (FuncionarioModel)funcionarioBindingSource.Current;
-            view.FuncionarioId = funcionario.Id.ToString();
-            view.FuncionarioNome = funcionario.Nome;    
-            view.FuncionarioCpf = funcionario.Cpf.ToString();
-            view.FuncionarioSituacao = funcionario.Situacao.ToString(); 
+            view.FuncionarioId            = funcionario.Id.ToString();
+            view.FuncionarioNome          = funcionario.Nome;    
+            view.FuncionarioCpf           = funcionario.Cpf.ToString();
+            view.FuncionarioSituacao      = funcionario.Situacao.ToString(); 
             view.FuncionarioDataAlteracao = funcionario.DataAlteracao.ToString("dd/MM/yyyy");
 
             view.IsEdit = true;
         }
-        private void SavePet(object sender, EventArgs e)
+        private void SaveFuncionario(object sender, EventArgs e)
         {
             var model = new FuncionarioModel();
 
@@ -61,7 +60,8 @@ namespace GerenciadorDeTickets.Presenter
             model.Id = Convert.ToInt32(view.FuncionarioId);
             model.Nome = view.FuncionarioNome.ToString();
             model.Cpf = view.FuncionarioCpf.ToString();
-            model.Situacao = 'A';
+            model.Situacao = Convert.ToChar(view.FuncionarioSituacao);
+
 
             try
             {
@@ -85,8 +85,6 @@ namespace GerenciadorDeTickets.Presenter
                 view.IsSuccessful = false; 
                 view.Message = "Erro ao tentar salvar: " + ex.Message;
             }
-
-
         }
 
         private void CleanViewFields()

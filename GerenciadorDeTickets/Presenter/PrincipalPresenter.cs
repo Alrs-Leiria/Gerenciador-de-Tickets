@@ -21,6 +21,7 @@ namespace GerenciadorDeTickets.Presenter
             this.principalView = principalView;
             this.sqlConnectionString = sqlConnectionString;
             this.principalView.ShowFuncionarioView += ShowFuncionarioView;
+            this.principalView.ShowTicketView += ShowTicketView;    
         }
 
         private void ShowFuncionarioView(object sender, EventArgs e)
@@ -29,6 +30,14 @@ namespace GerenciadorDeTickets.Presenter
             IFuncionarioRepository repository = new FuncionarioRepository(sqlConnectionString);
 
             new FuncionarioPresenter(view, repository);
+        }
+
+        private void ShowTicketView(object sender, EventArgs e)
+        {
+            ITicketView view = TicketView.GetInstance((PrincipalView) principalView);
+            ITicketRepository repository = new TicketRepository(sqlConnectionString);
+
+            new TicketPresenter(view, repository);
         }
     }
 }

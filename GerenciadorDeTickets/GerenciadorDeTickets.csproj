@@ -123,7 +123,15 @@
     <Compile Include="Models\TicketModel.cs" />
     <Compile Include="Presenter\Common\ModelDataValidation.cs" />
     <Compile Include="Presenter\PrincipalPresenter.cs" />
+    <Compile Include="Presenter\TicketPresenter.cs" />
     <Compile Include="Views\IPrincipalView.cs" />
+    <Compile Include="Views\ITicketView.cs" />
+    <Compile Include="Views\TicketView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TicketView.Designer.cs">
+      <DependentUpon>TicketView.cs</DependentUpon>
+    </Compile>
     <Compile Include="_Repositories\BaseRepository.cs" />
     <Compile Include="_Repositories\FuncionarioRepository.cs" />
     <Compile Include="Presenter\FuncionarioPresenter.cs" />
@@ -155,6 +163,8 @@
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\IFuncionarioView.cs" />
+    <Compile Include="_Repositories\ITicketRepository.cs" />
+    <Compile Include="_Repositories\TicketRepository.cs" />
     <EmbeddedResource Include="Relatorios\ReportViewer\RelatorioFuncionarios.rdlc" />
     <EmbeddedResource Include="Relatorios\WinForms\FrmFuncionarioRelatorio.resx">
       <DependentUpon>FrmFuncionarioRelatorio.cs</DependentUpon>
@@ -176,6 +186,9 @@
     </Compile>
     <EmbeddedResource Include="Views\Outros Forms\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TicketView.resx">
+      <DependentUpon>TicketView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\GerenciadorDeTickets.Models.Funcionario.datasource" />

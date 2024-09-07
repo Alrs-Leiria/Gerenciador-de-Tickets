@@ -94,12 +94,9 @@ namespace GerenciadorDeTickets._Repositories
                             {
                                 MessageBox.Show("Erro: " + ex.Message);
                             }
-
-
                             funcionarioList.Add(funcionarioModel);
                         }
                     }
-
                 }
             }
 
@@ -139,7 +136,6 @@ namespace GerenciadorDeTickets._Repositories
                             funcionarioList.Add(funcionarioModel);
                         }
                     }
-
                 }
             }
             return funcionarioList;

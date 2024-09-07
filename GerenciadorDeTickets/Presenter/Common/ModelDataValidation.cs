@@ -17,7 +17,7 @@ namespace GerenciadorDeTickets.Presenter.Common
             ValidationContext context = new ValidationContext(model);
             bool isValid = Validator.TryValidateObject(model, context, results, true);
 
-            if (isValid = false)
+            if (isValid == false)
             {
                 foreach (var item in results)
                 {
