@@ -41,7 +41,6 @@
             this.dgvTickets = new System.Windows.Forms.DataGridView();
             this.tpTicketDetalhes = new System.Windows.Forms.TabPage();
             this.nupQuantidade = new System.Windows.Forms.NumericUpDown();
-            this.btnBuscarFuncionario = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cbSituacao = new System.Windows.Forms.ComboBox();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -185,7 +184,6 @@
             // 
             this.tpTicketDetalhes.Controls.Add(this.txtFuncionarioId);
             this.tpTicketDetalhes.Controls.Add(this.nupQuantidade);
-            this.tpTicketDetalhes.Controls.Add(this.btnBuscarFuncionario);
             this.tpTicketDetalhes.Controls.Add(this.btnCancelar);
             this.tpTicketDetalhes.Controls.Add(this.cbSituacao);
             this.tpTicketDetalhes.Controls.Add(this.btnSalvar);
@@ -211,15 +209,6 @@
             this.nupQuantidade.Name = "nupQuantidade";
             this.nupQuantidade.Size = new System.Drawing.Size(98, 20);
             this.nupQuantidade.TabIndex = 40;
-            // 
-            // btnBuscarFuncionario
-            // 
-            this.btnBuscarFuncionario.Location = new System.Drawing.Point(410, 79);
-            this.btnBuscarFuncionario.Name = "btnBuscarFuncionario";
-            this.btnBuscarFuncionario.Size = new System.Drawing.Size(44, 26);
-            this.btnBuscarFuncionario.TabIndex = 39;
-            this.btnBuscarFuncionario.Text = "...";
-            this.btnBuscarFuncionario.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
@@ -262,6 +251,7 @@
             // 
             // txtFuncionairoNome
             // 
+            this.txtFuncionairoNome.Enabled = false;
             this.txtFuncionairoNome.Location = new System.Drawing.Point(135, 79);
             this.txtFuncionairoNome.Margin = new System.Windows.Forms.Padding(2);
             this.txtFuncionairoNome.MaxLength = 255;
@@ -297,9 +287,9 @@
             this.lblTxtData.Location = new System.Drawing.Point(13, 209);
             this.lblTxtData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTxtData.Name = "lblTxtData";
-            this.lblTxtData.Size = new System.Drawing.Size(78, 13);
+            this.lblTxtData.Size = new System.Drawing.Size(70, 13);
             this.lblTxtData.TabIndex = 29;
-            this.lblTxtData.Text = "Data Alteracao";
+            this.lblTxtData.Text = "Data Entrega";
             // 
             // label3
             // 
@@ -388,7 +378,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.Button btnBuscarFuncionario;
         private System.Windows.Forms.NumericUpDown nupQuantidade;
         private System.Windows.Forms.TextBox txtFuncionarioId;
     }

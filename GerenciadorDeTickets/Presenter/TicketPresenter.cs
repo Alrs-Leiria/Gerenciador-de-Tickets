@@ -14,14 +14,18 @@ namespace GerenciadorDeTickets.Presenter
     {
         private ITicketView view;
         private ITicketRepository repository;
+        private IFuncionarioRepository funcionarioRepository;
         private BindingSource ticketBindingSource;
         private IEnumerable<TicketModel> ticketList;
+        private FuncionarioModel funcionarioModel;
 
 
-        public  TicketPresenter(ITicketView view, ITicketRepository repository)
+        public  TicketPresenter(ITicketView view, ITicketRepository repository, IFuncionarioRepository funcionarioRepository)
         {
             this.view = view;
             this.repository = repository;
+            this.funcionarioRepository = funcionarioRepository;
+
             this.ticketBindingSource = new BindingSource();
 
             this.view.AddNewEvent += AddNewTicket;
@@ -29,12 +33,33 @@ namespace GerenciadorDeTickets.Presenter
             this.view.SearchEvent += SearchTicket;
             this.view.EditEvent   += LoadSelectedTicketToEdit;
             this.view.SaveEvent   += SaveTicket;
+            this.view.FuncionarioId_Leave += FuncionarioId_Leave;
 
             this.view.SetTicketBidingSource(ticketBindingSource);
 
             LoadTicketList();
 
             this.view.Show();
+        }
+        public void LoadTicketFuncionarioNome()
+        {
+            funcionarioModel = funcionarioRepository.GetById(Convert.ToInt32(view.TicketFuncionarioId));
+            view.TicketFuncionarioNome = funcionarioModel.Nome;
+            view.TicketFuncionarioId = funcionarioModel.Id.ToString();
+        }
+        private void FuncionarioId_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(view.TicketFuncionarioId) || !int.TryParse(view.TicketFuncionarioId, out int id))
+            {
+                MessageBox.Show("Id informado não é válido!");
+                view.TicketFuncionarioId = "";
+                view.TicketFuncionarioNome = "";
+            }
+            else
+            {
+                LoadTicketFuncionarioNome();
+            }
+        
         }
 
         private void AddNewTicket(object sender, EventArgs e)
@@ -59,14 +84,19 @@ namespace GerenciadorDeTickets.Presenter
 
         private void LoadSelectedTicketToEdit(object sender, EventArgs e)
         {
+
             var ticket = (TicketModel)ticketBindingSource.Current;
-            view.TicketId            = ticket.Id.ToString();
+
+            view.TicketId = ticket.Id.ToString();   
             view.TicketFuncionarioId = ticket.FuncionarioId.ToString();
-            view.TicketQuantidade    = ticket.Quantidade;
-            view.TicketSituacao      = ticket.Situacao.ToString();
-            view.TicketDataEntrega   = ticket.DataEntrega.ToString("dd/MM/yyyy");
+            view.TicketQuantidade = ticket.Quantidade;
+            view.TicketSituacao = ticket.Situacao.ToString();
+            view.TicketDataEntrega = ticket.DataEntrega.ToString("dd/MM/yyyy");
+
+            LoadTicketFuncionarioNome();
 
             view.IsEdit = true;
+            
         }
         private void SaveTicket(object sender, EventArgs e)
         {
@@ -106,6 +136,7 @@ namespace GerenciadorDeTickets.Presenter
         private void SearchTicket(object sender, EventArgs e)
         {
             bool emptyValue = string.IsNullOrWhiteSpace(this.view.SearchValue);
+
             if (emptyValue == false) 
             {
                 ticketList = repository.GetByValue(this.view.SearchValue);
@@ -114,6 +145,7 @@ namespace GerenciadorDeTickets.Presenter
             {
                 ticketList = repository.GetAll();
             }
+            ticketBindingSource.DataSource = ticketList;
         }
         private void LoadTicketList()
         {

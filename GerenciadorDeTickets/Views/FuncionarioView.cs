@@ -53,17 +53,25 @@ namespace GerenciadorDeTickets.Views
             };
             btnAlterar.Click += delegate 
             { 
-                EditEvent?.Invoke(this, EventArgs.Empty);
-                tabControl1.TabPages.Remove(tpFuncionarioList);
-                tabControl1.TabPages.Add(tpFuncionarioDetalhes);
-                tpFuncionarioDetalhes.Text = "Atualizar Funcionario";
+                if(dgvFuncionarios.Rows.Count > 0)
+                {
+                    EditEvent?.Invoke(this, EventArgs.Empty);
+                    tabControl1.TabPages.Remove(tpFuncionarioList);
+                    tabControl1.TabPages.Add(tpFuncionarioDetalhes);
+                    tpFuncionarioDetalhes.Text = "Atualizar Funcionario";
 
-                cbSituacao.Enabled = true;
+                    cbSituacao.Enabled = true;
 
-                lblData.Visible = true;
-                lblData.Enabled = true;
+                    lblData.Visible = true;
+                    lblData.Enabled = true;
 
-                lblTxtData.Visible = true;
+                    lblTxtData.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Não há registros...");
+                }
+
             };
             btnSalvar.Click  += delegate 
             { 

@@ -46,17 +46,24 @@ namespace GerenciadorDeTickets.Views
 
             btnAlterar.Click += delegate
             {
-                EditEvent?.Invoke(this, EventArgs.Empty);
-                tabControl1.TabPages.Remove(tpTicketList);
-                tabControl1.TabPages.Add(tpTicketDetalhes);
-                tpTicketDetalhes.Text = "Atualizar Ticket";
+                if (dgvTickets.Rows.Count > 0)
+                {
+                    EditEvent?.Invoke(this, EventArgs.Empty);
+                    tabControl1.TabPages.Remove(tpTicketList);
+                    tabControl1.TabPages.Add(tpTicketDetalhes);
+                    tpTicketDetalhes.Text = "Atualizar Ticket";
 
-                cbSituacao.Enabled = true;
+                    cbSituacao.Enabled = true;
 
-                lblData.Visible = true;
-                lblData.Enabled = true;
+                    lblData.Visible = true;
+                    lblData.Enabled = true;
 
-                lblTxtData.Visible = true;
+                    lblTxtData.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Não há registros...");
+                }
             };
 
             btnSalvar.Click += delegate
@@ -78,6 +85,8 @@ namespace GerenciadorDeTickets.Views
                 tabControl1.TabPages.Remove(tpTicketDetalhes);
                 tabControl1.TabPages.Add(tpTicketList);
             };
+
+            txtFuncionarioId.Leave += delegate { FuncionarioId_Leave?.Invoke(this, EventArgs.Empty); };
 
             btnFechar.Click += delegate { this.Close(); };
         }
@@ -145,6 +154,7 @@ namespace GerenciadorDeTickets.Views
         public event EventHandler EditEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
+        public event EventHandler FuncionarioId_Leave;
 
         public void SetTicketBidingSource(BindingSource ticketList)
         {

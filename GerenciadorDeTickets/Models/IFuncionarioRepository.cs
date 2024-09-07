@@ -13,5 +13,6 @@ namespace GerenciadorDeTickets.Models
         void Edit(FuncionarioModel funcionarioModel);
         IEnumerable<FuncionarioModel> GetAll();
         IEnumerable<FuncionarioModel> GetByValue(string value);
+        FuncionarioModel GetById(int id);
     }
 }

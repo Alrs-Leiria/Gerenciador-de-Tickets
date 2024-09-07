@@ -99,10 +99,11 @@ namespace GerenciadorDeTickets._Repositories
         public IEnumerable<TicketModel> GetByValue(string value)
         {
             var ticketsList = new List<TicketModel>();
+
             int ticketId = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;
             string funcionarioNome = value;
 
-            var sql = @"SELECT * FROM tickets t
+            var sql = @"SELECT t.*, f.nome FROM tickets t
                         INNER JOIN funcionarios f ON(t.funcionario_id = f.id)
                         WHERE t.id=@id OR f.nome LIKE @nome";
             using (MySqlConnection connection = new MySqlConnection(connectionPath))
@@ -112,7 +113,7 @@ namespace GerenciadorDeTickets._Repositories
                 using (var command = new MySqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@id", ticketId);
-                    command.Parameters.AddWithValue("@nome", "%" +  funcionarioNome + "%");
+                    command.Parameters.AddWithValue("@nome", "%" + funcionarioNome + "%");
 
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {

@@ -140,5 +140,32 @@ namespace GerenciadorDeTickets._Repositories
             }
             return funcionarioList;
         }
+        FuncionarioModel IFuncionarioRepository.GetById(int id)
+        {
+            FuncionarioModel funcionarioModel = new FuncionarioModel();
+            var sql = @"SELECT * FROM funcionarios WHERE id=@id";
+            using (MySqlConnection connection = new MySqlConnection(connectionPath))
+            {
+                connection.Open();
+
+                using (var command = new MySqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            funcionarioModel.Id = reader.GetInt32("id");
+                            funcionarioModel.Nome = reader.GetString("nome");
+                            funcionarioModel.Cpf = reader.GetString("cpf");
+                            funcionarioModel.Situacao = reader.GetChar("situacao");
+                            funcionarioModel.DataAlteracao = reader.GetDateTime("data_alteracao");
+                        }
+                    }
+                }
+            }
+            return funcionarioModel;
+        }
     }
 }

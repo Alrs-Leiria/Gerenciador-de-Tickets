@@ -36,8 +36,9 @@ namespace GerenciadorDeTickets.Presenter
         {
             ITicketView view = TicketView.GetInstance((PrincipalView) principalView);
             ITicketRepository repository = new TicketRepository(sqlConnectionString);
+            IFuncionarioRepository funcionarioRepository = new FuncionarioRepository(sqlConnectionString);
 
-            new TicketPresenter(view, repository);
+            new TicketPresenter(view, repository, funcionarioRepository);
         }
     }
 }
