@@ -50,13 +50,13 @@ Na pasta Banco, na raiz do repositório, estão disponíveis o SQL para criaçã
 ## Demonstração
 
 #### Tela de Funcionario
-!(Gifs/FuncionarioGif.gif)
+![](Gifs/FuncionarioGif.gif)
 
 #### Tela de Tickets
-!(Gifs/TicketGif.gif)
+![](Gifs/TicketGif.gif)
 
 #### Tela de Relatorio
-!(Gifs/RelatorioGif.gif)
+![](Gifs/RelatorioGif.gif)
 
 
 
