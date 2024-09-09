@@ -24,7 +24,7 @@ namespace GerenciadorDeTickets
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            string sqlConnectionString = "Server=localhost;user=root;password=1234;database=gerenciador;";
+            string sqlConnectionString = "server=localhost;user=root;password=1234;database=gerenciador;";
             IPrincipalView view = new PrincipalView();
 
             new PrincipalPresenter(view, sqlConnectionString);

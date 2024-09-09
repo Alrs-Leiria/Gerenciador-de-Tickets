@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblTotalQuantidadeTickets = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbAgrupar = new System.Windows.Forms.CheckBox();
             this.btnImprimir = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.lblTotalQuantidadeTickets = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRelatorio)).BeginInit();
             this.panel1.SuspendLayout();
@@ -73,6 +73,16 @@
             this.panel2.Size = new System.Drawing.Size(587, 367);
             this.panel2.TabIndex = 20;
             // 
+            // lblTotalQuantidadeTickets
+            // 
+            this.lblTotalQuantidadeTickets.AutoSize = true;
+            this.lblTotalQuantidadeTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalQuantidadeTickets.Location = new System.Drawing.Point(236, 350);
+            this.lblTotalQuantidadeTickets.Name = "lblTotalQuantidadeTickets";
+            this.lblTotalQuantidadeTickets.Size = new System.Drawing.Size(14, 17);
+            this.lblTotalQuantidadeTickets.TabIndex = 52;
+            this.lblTotalQuantidadeTickets.Text = "-";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -97,7 +107,7 @@
             this.btnImprimir.Location = new System.Drawing.Point(491, 114);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 29);
-            this.btnImprimir.TabIndex = 49;
+            this.btnImprimir.TabIndex = 5;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
             // 
@@ -118,7 +128,7 @@
             this.dtInicial.Location = new System.Drawing.Point(40, 48);
             this.dtInicial.Name = "dtInicial";
             this.dtInicial.Size = new System.Drawing.Size(120, 20);
-            this.dtInicial.TabIndex = 47;
+            this.dtInicial.TabIndex = 0;
             // 
             // dtFinal
             // 
@@ -126,7 +136,7 @@
             this.dtFinal.Location = new System.Drawing.Point(190, 48);
             this.dtFinal.Name = "dtFinal";
             this.dtFinal.Size = new System.Drawing.Size(120, 20);
-            this.dtFinal.TabIndex = 46;
+            this.dtFinal.TabIndex = 1;
             // 
             // cbTodos
             // 
@@ -134,7 +144,7 @@
             this.cbTodos.Location = new System.Drawing.Point(325, 114);
             this.cbTodos.Name = "cbTodos";
             this.cbTodos.Size = new System.Drawing.Size(56, 17);
-            this.cbTodos.TabIndex = 45;
+            this.cbTodos.TabIndex = 3;
             this.cbTodos.Text = "Todos";
             this.cbTodos.UseVisualStyleBackColor = true;
             this.cbTodos.CheckedChanged += new System.EventHandler(this.cbTodos_CheckedChanged);
@@ -156,7 +166,7 @@
             this.txtFuncionarioId.Multiline = true;
             this.txtFuncionarioId.Name = "txtFuncionarioId";
             this.txtFuncionarioId.Size = new System.Drawing.Size(41, 26);
-            this.txtFuncionarioId.TabIndex = 43;
+            this.txtFuncionarioId.TabIndex = 2;
             this.txtFuncionarioId.Text = "0";
             // 
             // txtFuncionairoNome
@@ -193,7 +203,7 @@
             this.btnGerar.Location = new System.Drawing.Point(410, 114);
             this.btnGerar.Name = "btnGerar";
             this.btnGerar.Size = new System.Drawing.Size(75, 29);
-            this.btnGerar.TabIndex = 0;
+            this.btnGerar.TabIndex = 4;
             this.btnGerar.Text = "Gerar";
             this.btnGerar.UseVisualStyleBackColor = true;
             // 
@@ -226,16 +236,6 @@
             this.btnFechar.TabIndex = 0;
             this.btnFechar.Text = "X";
             this.btnFechar.UseVisualStyleBackColor = true;
-            // 
-            // lblTotalQuantidadeTickets
-            // 
-            this.lblTotalQuantidadeTickets.AutoSize = true;
-            this.lblTotalQuantidadeTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalQuantidadeTickets.Location = new System.Drawing.Point(236, 350);
-            this.lblTotalQuantidadeTickets.Name = "lblTotalQuantidadeTickets";
-            this.lblTotalQuantidadeTickets.Size = new System.Drawing.Size(14, 17);
-            this.lblTotalQuantidadeTickets.TabIndex = 52;
-            this.lblTotalQuantidadeTickets.Text = "-";
             // 
             // RelatorioView
             // 

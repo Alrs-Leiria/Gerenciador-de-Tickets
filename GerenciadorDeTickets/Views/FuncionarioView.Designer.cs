@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpFuncionarioList = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cbSituacao = new System.Windows.Forms.ComboBox();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.lblData = new System.Windows.Forms.Label();
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.txtData = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tpFuncionarioList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarios)).BeginInit();
@@ -88,13 +88,24 @@
             this.tpFuncionarioList.Text = "Listagem";
             this.tpFuncionarioList.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(-1, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(186, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Busca por NOME ou ID do funcionario";
+            // 
             // btnImprimir
             // 
             this.btnImprimir.Location = new System.Drawing.Point(5, 313);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(2);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(64, 30);
-            this.btnImprimir.TabIndex = 16;
+            this.btnImprimir.TabIndex = 4;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
             // 
@@ -104,7 +115,7 @@
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(64, 30);
-            this.btnBuscar.TabIndex = 15;
+            this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
@@ -114,7 +125,7 @@
             this.btnAlterar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(64, 30);
-            this.btnAlterar.TabIndex = 14;
+            this.btnAlterar.TabIndex = 2;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
@@ -125,7 +136,7 @@
             this.txtBuscar.Multiline = true;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(499, 31);
-            this.txtBuscar.TabIndex = 13;
+            this.txtBuscar.TabIndex = 0;
             // 
             // btnNovo
             // 
@@ -133,7 +144,7 @@
             this.btnNovo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(64, 30);
-            this.btnNovo.TabIndex = 12;
+            this.btnNovo.TabIndex = 3;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
             // 
@@ -153,10 +164,10 @@
             // 
             // tpFuncionarioDetalhes
             // 
+            this.tpFuncionarioDetalhes.Controls.Add(this.txtData);
             this.tpFuncionarioDetalhes.Controls.Add(this.btnCancelar);
             this.tpFuncionarioDetalhes.Controls.Add(this.cbSituacao);
             this.tpFuncionarioDetalhes.Controls.Add(this.btnSalvar);
-            this.tpFuncionarioDetalhes.Controls.Add(this.lblData);
             this.tpFuncionarioDetalhes.Controls.Add(this.txtCpf);
             this.tpFuncionarioDetalhes.Controls.Add(this.txtNome);
             this.tpFuncionarioDetalhes.Controls.Add(this.lblId);
@@ -179,18 +190,19 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(64, 30);
-            this.btnCancelar.TabIndex = 38;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // cbSituacao
             // 
             this.cbSituacao.FormattingEnabled = true;
+            this.cbSituacao.ItemHeight = 13;
             this.cbSituacao.Location = new System.Drawing.Point(90, 161);
             this.cbSituacao.Margin = new System.Windows.Forms.Padding(2);
             this.cbSituacao.Name = "cbSituacao";
             this.cbSituacao.Size = new System.Drawing.Size(92, 21);
-            this.cbSituacao.TabIndex = 37;
+            this.cbSituacao.TabIndex = 3;
             // 
             // btnSalvar
             // 
@@ -198,19 +210,9 @@
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(64, 30);
-            this.btnSalvar.TabIndex = 36;
+            this.btnSalvar.TabIndex = 4;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
-            // 
-            // lblData
-            // 
-            this.lblData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblData.Location = new System.Drawing.Point(90, 197);
-            this.lblData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(98, 26);
-            this.lblData.TabIndex = 34;
-            this.lblData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtCpf
             // 
@@ -220,7 +222,7 @@
             this.txtCpf.Multiline = true;
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(314, 26);
-            this.txtCpf.TabIndex = 33;
+            this.txtCpf.TabIndex = 2;
             // 
             // txtNome
             // 
@@ -230,7 +232,7 @@
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(314, 26);
-            this.txtNome.TabIndex = 32;
+            this.txtNome.TabIndex = 1;
             // 
             // lblId
             // 
@@ -239,7 +241,7 @@
             this.lblId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(98, 26);
-            this.lblId.TabIndex = 31;
+            this.lblId.TabIndex = 0;
             this.lblId.Text = "0";
             this.lblId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -250,7 +252,7 @@
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 13);
-            this.label5.TabIndex = 30;
+            this.label5.TabIndex = 1;
             this.label5.Text = "ID";
             // 
             // lblTxtData
@@ -260,7 +262,7 @@
             this.lblTxtData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTxtData.Name = "lblTxtData";
             this.lblTxtData.Size = new System.Drawing.Size(78, 13);
-            this.lblTxtData.TabIndex = 29;
+            this.lblTxtData.TabIndex = 10;
             this.lblTxtData.Text = "Data Alteracao";
             // 
             // label3
@@ -270,7 +272,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 28;
+            this.label3.TabIndex = 9;
             this.label3.Text = "Situacao";
             // 
             // label2
@@ -280,7 +282,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
-            this.label2.TabIndex = 27;
+            this.label2.TabIndex = 8;
             this.label2.Text = "CPF";
             // 
             // lblNome
@@ -290,7 +292,7 @@
             this.lblNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(35, 13);
-            this.lblNome.TabIndex = 26;
+            this.lblNome.TabIndex = 7;
             this.lblNome.Text = "Nome";
             // 
             // panel1
@@ -322,16 +324,16 @@
             this.btnFechar.Text = "X";
             this.btnFechar.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // txtData
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(-1, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(186, 13);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Busca por NOME ou ID do funcionario";
+            this.txtData.Enabled = false;
+            this.txtData.Location = new System.Drawing.Point(90, 196);
+            this.txtData.Margin = new System.Windows.Forms.Padding(2);
+            this.txtData.MaxLength = 255;
+            this.txtData.Multiline = true;
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(92, 26);
+            this.txtData.TabIndex = 11;
             // 
             // FuncionarioView
             // 
@@ -369,7 +371,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cbSituacao;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblId;
@@ -382,5 +383,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtData;
     }
 }

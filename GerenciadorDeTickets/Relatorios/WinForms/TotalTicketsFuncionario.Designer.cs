@@ -41,14 +41,14 @@
             this.rvTotalTickets.Size = new System.Drawing.Size(800, 450);
             this.rvTotalTickets.TabIndex = 0;
             // 
-            // TotalTicketsByFuncionario
+            // TotalTicketsFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.rvTotalTickets);
-            this.Name = "TotalTicketsByFuncionario";
-            this.Text = "TotalTicketsByFuncionario";
+            this.Name = "TotalTicketsFuncionario";
+            this.Text = "Total de Tickets";
             this.Load += new System.EventHandler(this.TotalTicketsByFuncionario_Load);
             this.ResumeLayout(false);
 

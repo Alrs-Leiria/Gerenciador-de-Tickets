@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpTicketList = new System.Windows.Forms.TabPage();
@@ -64,22 +64,22 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblTitulo);
             this.panel1.Controls.Add(this.btnFechar);
             this.panel1.Location = new System.Drawing.Point(14, 14);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(587, 39);
             this.panel1.TabIndex = 20;
             // 
-            // label1
+            // lblTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tickets";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(3, 10);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(63, 20);
+            this.lblTitulo.TabIndex = 1;
+            this.lblTitulo.Text = "Tickets ";
             // 
             // btnFechar
             // 
@@ -134,7 +134,7 @@
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(64, 30);
-            this.btnBuscar.TabIndex = 15;
+            this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
@@ -144,7 +144,7 @@
             this.btnAlterar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(64, 30);
-            this.btnAlterar.TabIndex = 14;
+            this.btnAlterar.TabIndex = 3;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
@@ -155,7 +155,7 @@
             this.txtBuscar.Multiline = true;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(499, 31);
-            this.txtBuscar.TabIndex = 13;
+            this.txtBuscar.TabIndex = 0;
             // 
             // btnNovo
             // 
@@ -163,7 +163,7 @@
             this.btnNovo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(64, 30);
-            this.btnNovo.TabIndex = 12;
+            this.btnNovo.TabIndex = 4;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
             // 
@@ -179,7 +179,7 @@
             this.dgvTickets.RowHeadersWidth = 51;
             this.dgvTickets.RowTemplate.Height = 24;
             this.dgvTickets.Size = new System.Drawing.Size(567, 252);
-            this.dgvTickets.TabIndex = 11;
+            this.dgvTickets.TabIndex = 2;
             // 
             // tpTicketDetalhes
             // 
@@ -211,7 +211,7 @@
             this.dtDataEntrega.Location = new System.Drawing.Point(88, 203);
             this.dtDataEntrega.Name = "dtDataEntrega";
             this.dtDataEntrega.Size = new System.Drawing.Size(100, 20);
-            this.dtDataEntrega.TabIndex = 42;
+            this.dtDataEntrega.TabIndex = 3;
             // 
             // txtFuncionarioId
             // 
@@ -228,7 +228,7 @@
             this.nupQuantidade.Location = new System.Drawing.Point(90, 122);
             this.nupQuantidade.Name = "nupQuantidade";
             this.nupQuantidade.Size = new System.Drawing.Size(98, 20);
-            this.nupQuantidade.TabIndex = 40;
+            this.nupQuantidade.TabIndex = 1;
             this.nupQuantidade.Value = new decimal(new int[] {
             1,
             0,
@@ -241,7 +241,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(64, 30);
-            this.btnCancelar.TabIndex = 38;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -252,7 +252,7 @@
             this.cbSituacao.Margin = new System.Windows.Forms.Padding(2);
             this.cbSituacao.Name = "cbSituacao";
             this.cbSituacao.Size = new System.Drawing.Size(98, 21);
-            this.cbSituacao.TabIndex = 37;
+            this.cbSituacao.TabIndex = 2;
             // 
             // btnSalvar
             // 
@@ -260,7 +260,7 @@
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(64, 30);
-            this.btnSalvar.TabIndex = 36;
+            this.btnSalvar.TabIndex = 4;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
@@ -273,7 +273,7 @@
             this.txtFuncionairoNome.Multiline = true;
             this.txtFuncionairoNome.Name = "txtFuncionairoNome";
             this.txtFuncionairoNome.Size = new System.Drawing.Size(270, 26);
-            this.txtFuncionairoNome.TabIndex = 32;
+            this.txtFuncionairoNome.TabIndex = 0;
             // 
             // lblId
             // 
@@ -361,7 +361,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpTicketList;

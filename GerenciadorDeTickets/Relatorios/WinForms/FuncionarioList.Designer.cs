@@ -41,14 +41,14 @@
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // FrmFuncionarioRelatorio
+            // FuncionarioList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "FrmFuncionarioRelatorio";
-            this.Text = "Form1";
+            this.Name = "FuncionarioList";
+            this.Text = "Funcionarios";
             this.Load += new System.EventHandler(this.FrmFuncionarioRelatorio_Load);
             this.ResumeLayout(false);
 

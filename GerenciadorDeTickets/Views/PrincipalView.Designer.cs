@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTickets = new System.Windows.Forms.Button();
-            this.btnFuncionarios = new System.Windows.Forms.Button();
             this.btnRelatorios = new System.Windows.Forms.Button();
+            this.btnFuncionarios = new System.Windows.Forms.Button();
+            this.btnTickets = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,14 +46,14 @@
             this.panel1.Size = new System.Drawing.Size(208, 490);
             this.panel1.TabIndex = 2;
             // 
-            // btnTickets
+            // btnRelatorios
             // 
-            this.btnTickets.Location = new System.Drawing.Point(0, 50);
-            this.btnTickets.Name = "btnTickets";
-            this.btnTickets.Size = new System.Drawing.Size(208, 51);
-            this.btnTickets.TabIndex = 0;
-            this.btnTickets.Text = "Tickets";
-            this.btnTickets.UseVisualStyleBackColor = true;
+            this.btnRelatorios.Location = new System.Drawing.Point(0, 292);
+            this.btnRelatorios.Name = "btnRelatorios";
+            this.btnRelatorios.Size = new System.Drawing.Size(208, 51);
+            this.btnRelatorios.TabIndex = 2;
+            this.btnRelatorios.Text = "Relatorios";
+            this.btnRelatorios.UseVisualStyleBackColor = true;
             // 
             // btnFuncionarios
             // 
@@ -64,14 +64,14 @@
             this.btnFuncionarios.Text = "Funcionairos";
             this.btnFuncionarios.UseVisualStyleBackColor = true;
             // 
-            // btnRelatorios
+            // btnTickets
             // 
-            this.btnRelatorios.Location = new System.Drawing.Point(0, 292);
-            this.btnRelatorios.Name = "btnRelatorios";
-            this.btnRelatorios.Size = new System.Drawing.Size(208, 51);
-            this.btnRelatorios.TabIndex = 2;
-            this.btnRelatorios.Text = "Relatorios";
-            this.btnRelatorios.UseVisualStyleBackColor = true;
+            this.btnTickets.Location = new System.Drawing.Point(0, 50);
+            this.btnTickets.Name = "btnTickets";
+            this.btnTickets.Size = new System.Drawing.Size(208, 51);
+            this.btnTickets.TabIndex = 0;
+            this.btnTickets.Text = "Tickets";
+            this.btnTickets.UseVisualStyleBackColor = true;
             // 
             // PrincipalView
             // 

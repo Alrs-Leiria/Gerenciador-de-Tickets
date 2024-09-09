@@ -51,8 +51,8 @@ namespace GerenciadorDeTickets.Views
         }
         public string FuncionarioDataAlteracao
         {
-            get { return lblData.Text; }
-            set { lblData.Text = value; }
+            get { return txtData.Text; }
+            set { txtData.Text = value; }
         }
         public string SearchValue
         {
@@ -88,8 +88,8 @@ namespace GerenciadorDeTickets.Views
                 cbSituacao.SelectedIndex = 0;
                 cbSituacao.Enabled = false;
 
-                lblData.Visible = false;
-                lblData.Enabled = false;
+                txtData.Visible = false;
+                txtData.Enabled = false;
 
                 lblTxtData.Visible = false;
                 
@@ -105,8 +105,7 @@ namespace GerenciadorDeTickets.Views
 
                     cbSituacao.Enabled = true;
 
-                    lblData.Visible = true;
-                    lblData.Enabled = true;
+                    txtData.Visible = true;                
 
                     lblTxtData.Visible = true;
                 }

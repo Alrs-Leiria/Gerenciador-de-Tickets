@@ -82,7 +82,7 @@ namespace GerenciadorDeTickets.Views
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 tabControl1.TabPages.Remove(tpTicketList);
                 tabControl1.TabPages.Add(tpTicketDetalhes);
-                tpTicketDetalhes.Text = "Adicionar Ticket";
+                tpTicketDetalhes.Text = "Entregar tickets";
 
                 cbSituacao.SelectedIndex = 0;
                 cbSituacao.Enabled = false;
