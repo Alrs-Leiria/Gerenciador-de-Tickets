@@ -28,7 +28,7 @@ A estrutura do projeto foi construída se baseando no modelo MVP(Model-View-Pres
 Para executar este projeto, você pode precisar adicionar as seguintes configurações no Projeto/Visual Studio.
 
 ### Requisitos
--.NET framewor 4.8 instaldo na maquina.
+- .NET framewor 4.8 instaldo na maquina.
 #### Referências adicionados ao projeto
     System.ComponentModel.DataAnnotations
 
