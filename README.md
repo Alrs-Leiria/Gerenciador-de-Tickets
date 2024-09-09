@@ -21,14 +21,14 @@ A estrutura do projeto foi construída se baseando no modelo MVP(Model-View-Pres
 - Criar, editar, listar e buscar(por nome de funcionário, e id do ticket) tickets entregues
 - Emitir relatório de ticketes entregues por período.
 
-
+## Requisitos
+- .NET framewor 4.8 instaldo na maquina.
+- Visual Studio instalado com a opção (.NET desktop development).
 
 ## Configuração do projeto
 
 Para executar este projeto, você pode precisar adicionar as seguintes configurações no Projeto/Visual Studio.
-
-### Requisitos
-- .NET framewor 4.8 instaldo na maquina.
+  
 #### Referências adicionados ao projeto
     System.ComponentModel.DataAnnotations
 
