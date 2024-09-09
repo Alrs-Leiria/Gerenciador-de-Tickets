@@ -60,7 +60,7 @@ Na pasta Banco, na raiz do repositório, estão disponíveis o SQL para criaçã
 
 
 
-## Autores
+## Autor
 
 - [@André Leiria](https://github.com/Alrs-Leiria)
 
