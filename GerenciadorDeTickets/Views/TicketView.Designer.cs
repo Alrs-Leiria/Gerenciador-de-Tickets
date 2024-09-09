@@ -33,18 +33,18 @@
             this.btnFechar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpTicketList = new System.Windows.Forms.TabPage();
-            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnNovo = new System.Windows.Forms.Button();
             this.dgvTickets = new System.Windows.Forms.DataGridView();
             this.tpTicketDetalhes = new System.Windows.Forms.TabPage();
+            this.dtDataEntrega = new System.Windows.Forms.DateTimePicker();
+            this.txtFuncionarioId = new System.Windows.Forms.TextBox();
             this.nupQuantidade = new System.Windows.Forms.NumericUpDown();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cbSituacao = new System.Windows.Forms.ComboBox();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.lblData = new System.Windows.Forms.Label();
             this.txtFuncionairoNome = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,7 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
-            this.txtFuncionarioId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tpTicketList.SuspendLayout();
@@ -66,7 +65,7 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnFechar);
-            this.panel1.Location = new System.Drawing.Point(105, 16);
+            this.panel1.Location = new System.Drawing.Point(14, 14);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(587, 39);
             this.panel1.TabIndex = 20;
@@ -95,15 +94,14 @@
             this.tabControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tabControl1.Controls.Add(this.tpTicketList);
             this.tabControl1.Controls.Add(this.tpTicketDetalhes);
-            this.tabControl1.Location = new System.Drawing.Point(105, 61);
+            this.tabControl1.Location = new System.Drawing.Point(14, 59);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(591, 374);
+            this.tabControl1.Size = new System.Drawing.Size(587, 374);
             this.tabControl1.TabIndex = 19;
             // 
             // tpTicketList
             // 
-            this.tpTicketList.Controls.Add(this.btnImprimir);
             this.tpTicketList.Controls.Add(this.btnBuscar);
             this.tpTicketList.Controls.Add(this.btnAlterar);
             this.tpTicketList.Controls.Add(this.txtBuscar);
@@ -112,20 +110,10 @@
             this.tpTicketList.Location = new System.Drawing.Point(4, 22);
             this.tpTicketList.Name = "tpTicketList";
             this.tpTicketList.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTicketList.Size = new System.Drawing.Size(583, 348);
+            this.tpTicketList.Size = new System.Drawing.Size(579, 348);
             this.tpTicketList.TabIndex = 0;
             this.tpTicketList.Text = "Listagem";
             this.tpTicketList.UseVisualStyleBackColor = true;
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Location = new System.Drawing.Point(5, 313);
-            this.btnImprimir.Margin = new System.Windows.Forms.Padding(2);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(64, 30);
-            this.btnImprimir.TabIndex = 16;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
@@ -182,12 +170,12 @@
             // 
             // tpTicketDetalhes
             // 
+            this.tpTicketDetalhes.Controls.Add(this.dtDataEntrega);
             this.tpTicketDetalhes.Controls.Add(this.txtFuncionarioId);
             this.tpTicketDetalhes.Controls.Add(this.nupQuantidade);
             this.tpTicketDetalhes.Controls.Add(this.btnCancelar);
             this.tpTicketDetalhes.Controls.Add(this.cbSituacao);
             this.tpTicketDetalhes.Controls.Add(this.btnSalvar);
-            this.tpTicketDetalhes.Controls.Add(this.lblData);
             this.tpTicketDetalhes.Controls.Add(this.txtFuncionairoNome);
             this.tpTicketDetalhes.Controls.Add(this.lblId);
             this.tpTicketDetalhes.Controls.Add(this.label5);
@@ -198,10 +186,29 @@
             this.tpTicketDetalhes.Location = new System.Drawing.Point(4, 22);
             this.tpTicketDetalhes.Name = "tpTicketDetalhes";
             this.tpTicketDetalhes.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTicketDetalhes.Size = new System.Drawing.Size(583, 348);
+            this.tpTicketDetalhes.Size = new System.Drawing.Size(579, 348);
             this.tpTicketDetalhes.TabIndex = 1;
             this.tpTicketDetalhes.Text = "Detalhes";
             this.tpTicketDetalhes.UseVisualStyleBackColor = true;
+            // 
+            // dtDataEntrega
+            // 
+            this.dtDataEntrega.Enabled = false;
+            this.dtDataEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDataEntrega.Location = new System.Drawing.Point(88, 203);
+            this.dtDataEntrega.Name = "dtDataEntrega";
+            this.dtDataEntrega.Size = new System.Drawing.Size(100, 20);
+            this.dtDataEntrega.TabIndex = 42;
+            // 
+            // txtFuncionarioId
+            // 
+            this.txtFuncionarioId.Location = new System.Drawing.Point(90, 79);
+            this.txtFuncionarioId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFuncionarioId.MaxLength = 255;
+            this.txtFuncionarioId.Multiline = true;
+            this.txtFuncionarioId.Name = "txtFuncionarioId";
+            this.txtFuncionarioId.Size = new System.Drawing.Size(41, 26);
+            this.txtFuncionarioId.TabIndex = 41;
             // 
             // nupQuantidade
             // 
@@ -238,16 +245,6 @@
             this.btnSalvar.TabIndex = 36;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
-            // 
-            // lblData
-            // 
-            this.lblData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblData.Location = new System.Drawing.Point(90, 197);
-            this.lblData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(98, 26);
-            this.lblData.TabIndex = 34;
-            this.lblData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtFuncionairoNome
             // 
@@ -321,21 +318,11 @@
             this.lblNome.TabIndex = 26;
             this.lblNome.Text = "Funcionario";
             // 
-            // txtFuncionarioId
-            // 
-            this.txtFuncionarioId.Location = new System.Drawing.Point(90, 79);
-            this.txtFuncionarioId.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFuncionarioId.MaxLength = 255;
-            this.txtFuncionarioId.Multiline = true;
-            this.txtFuncionarioId.Name = "txtFuncionarioId";
-            this.txtFuncionarioId.Size = new System.Drawing.Size(41, 26);
-            this.txtFuncionarioId.TabIndex = 41;
-            // 
             // TicketView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(619, 446);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Name = "TicketView";
@@ -360,7 +347,6 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpTicketList;
-        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.TextBox txtBuscar;
@@ -370,7 +356,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cbSituacao;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.TextBox txtFuncionairoNome;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label label5;
@@ -380,5 +365,6 @@
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.NumericUpDown nupQuantidade;
         private System.Windows.Forms.TextBox txtFuncionarioId;
+        private System.Windows.Forms.DateTimePicker dtDataEntrega;
     }
 }

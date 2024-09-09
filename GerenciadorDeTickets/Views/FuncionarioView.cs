@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
@@ -91,10 +93,19 @@ namespace GerenciadorDeTickets.Views
                 tabControl1.TabPages.Add(tpFuncionarioList);
 
             };
-            btnFechar.Click  += delegate { this.Close(); };
+
+            btnImprimir.Click += delegate
+            {
+                PrintEvent?.Invoke(this, EventArgs.Empty);
+            };
+
+            btnFechar.Click  += delegate { CloseForm(); };
 
         }
-
+        public void CloseForm()
+        {
+            this.Close();
+        }
         private void Inicializar()
         {
             //dt = FuncionarioModel.GetDataTableFuncionarios();
@@ -215,6 +226,7 @@ namespace GerenciadorDeTickets.Views
         public event EventHandler EditEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
+        public event EventHandler PrintEvent;
 
         private static FuncionarioView instance;
         public static FuncionarioView GetInstance(Form parentContainer)

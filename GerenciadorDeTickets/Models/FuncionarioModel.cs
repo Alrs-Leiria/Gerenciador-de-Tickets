@@ -15,12 +15,6 @@ namespace GerenciadorDeTickets.Models
 {
     public class FuncionarioModel
     {
-        //private int id;
-        //private string nome;
-        //private string cpf;
-        //private char situcao;
-        //private DateTime dataAlteracao;
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }

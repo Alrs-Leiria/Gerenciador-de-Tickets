@@ -25,7 +25,9 @@ namespace GerenciadorDeTickets.Views
         event EventHandler EditEvent;
         event EventHandler SaveEvent;
         event EventHandler CancelEvent;
+        event EventHandler PrintEvent;
 
+        void CloseForm();
         void SetFuncionarioBidingSource(BindingSource funcionarioList);
         void Show();
     }

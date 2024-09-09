@@ -38,8 +38,8 @@ namespace GerenciadorDeTickets.Views
                 cbSituacao.SelectedIndex = 0;
                 cbSituacao.Enabled = false;
 
-                lblData.Visible = false;
-                lblData.Enabled = false;
+                dtDataEntrega.Visible = false;
+                dtDataEntrega.Enabled = false;
 
                 lblTxtData.Visible = false;
             };
@@ -55,8 +55,8 @@ namespace GerenciadorDeTickets.Views
 
                     cbSituacao.Enabled = true;
 
-                    lblData.Visible = true;
-                    lblData.Enabled = true;
+                    dtDataEntrega.Visible = true;
+                    dtDataEntrega.Enabled = true;
 
                     lblTxtData.Visible = true;
                 }
@@ -88,7 +88,12 @@ namespace GerenciadorDeTickets.Views
 
             txtFuncionarioId.Leave += delegate { FuncionarioId_Leave?.Invoke(this, EventArgs.Empty); };
 
-            btnFechar.Click += delegate { this.Close(); };
+            btnFechar.Click += delegate { CloseForm(); };
+        }
+
+        public void CloseForm()
+        {
+            this.Close();
         }
 
         private void AjustarSituacao()
@@ -135,10 +140,10 @@ namespace GerenciadorDeTickets.Views
                 }
             }
         }
-        public string TicketDataEntrega
+        public DateTime TicketDataEntrega
         {
-            get { return lblData.Text; }
-            set { lblData.Text = value; }
+            get { return dtDataEntrega.Value; }
+            set { dtDataEntrega.Value = value; }
         }
         public string SearchValue
         {

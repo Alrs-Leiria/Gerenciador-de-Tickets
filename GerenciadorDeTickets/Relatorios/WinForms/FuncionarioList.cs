@@ -11,10 +11,10 @@ using System.Windows.Forms;
 namespace GerenciadorDeTickets.Relatorios.WinForms
 {
 
-    public partial class FrmFuncionarioRelatorio : Form
+    public partial class FuncionarioList : Form
     {
         DataTable dt = new DataTable();
-        public FrmFuncionarioRelatorio(DataTable dt)
+        public FuncionarioList(DataTable dt)
         {
             InitializeComponent();
             this.dt = dt;

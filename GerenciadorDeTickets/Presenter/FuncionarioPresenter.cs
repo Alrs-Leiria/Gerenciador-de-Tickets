@@ -1,4 +1,5 @@
 ﻿using GerenciadorDeTickets.Models;
+using GerenciadorDeTickets.Relatorios.WinForms;
 using GerenciadorDeTickets.Views;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace GerenciadorDeTickets.Presenter
             this.view.SearchEvent += SearchFuncionario;
             this.view.EditEvent   += LoadSelectedFuncionarioToEdit;
             this.view.SaveEvent   += SaveFuncionario;
+            this.view.PrintEvent  += PrintEvent;
 
             this.view.SetFuncionarioBidingSource(funcionarioBindingSource);
 
@@ -35,6 +37,40 @@ namespace GerenciadorDeTickets.Presenter
 
             this.view.Show();
 
+        }
+
+        private DataTable GerarDadosRelatorioFuncionario(BindingSource funcionarioBindingSource) 
+        { 
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Id");
+            dt.Columns.Add("Nome");
+            dt.Columns.Add("Cpf");
+            dt.Columns.Add("Situacao");
+            dt.Columns.Add("DataAlteracao");
+            string datas = "";
+            foreach (FuncionarioModel funcionario in funcionarioBindingSource.List)
+            {
+                dt.Rows.Add(
+                    funcionario.Id.ToString(),
+                    funcionario.Nome,
+                    funcionario.Cpf,
+                    funcionario.Situacao.ToString(),
+                    funcionario.DataAlteracao.ToString("dd/MM/yyyy") 
+                );
+
+                datas = datas + funcionario.DataAlteracao.ToString("dd/MM/yyyy") + "\n";
+            }
+            MessageBox.Show(datas);
+            return dt;
+        } 
+        private void PrintEvent(object sender, EventArgs e)
+        {
+            var dt = GerarDadosRelatorioFuncionario(funcionarioBindingSource);
+            using(var frm = new FuncionarioList(dt))
+            {
+                frm.ShowDialog();
+            }
         }
 
         private void AddNewFuncionario(object sender, EventArgs e)
@@ -56,12 +92,10 @@ namespace GerenciadorDeTickets.Presenter
         {
             var model = new FuncionarioModel();
 
-
             model.Id = Convert.ToInt32(view.FuncionarioId);
             model.Nome = view.FuncionarioNome.ToString();
             model.Cpf = view.FuncionarioCpf.ToString();
             model.Situacao = Convert.ToChar(view.FuncionarioSituacao);
-
 
             try
             {

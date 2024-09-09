@@ -41,7 +41,7 @@ namespace GerenciadorDeTickets.Presenter
 
             this.view.Show();
         }
-        public void LoadTicketFuncionarioNome()
+        public void LoadFuncionarioNome()
         {
             funcionarioModel = funcionarioRepository.GetById(Convert.ToInt32(view.TicketFuncionarioId));
             view.TicketFuncionarioNome = funcionarioModel.Nome;
@@ -49,17 +49,16 @@ namespace GerenciadorDeTickets.Presenter
         }
         private void FuncionarioId_Leave(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(view.TicketFuncionarioId) || !int.TryParse(view.TicketFuncionarioId, out int id))
+            if(!int.TryParse(view.TicketFuncionarioId, out int id))
             {
                 MessageBox.Show("Id informado não é válido!");
-                view.TicketFuncionarioId = "";
+                view.TicketFuncionarioId = "0";
                 view.TicketFuncionarioNome = "";
             }
             else
             {
-                LoadTicketFuncionarioNome();
-            }
-        
+                LoadFuncionarioNome();
+            }        
         }
 
         private void AddNewTicket(object sender, EventArgs e)
@@ -79,7 +78,7 @@ namespace GerenciadorDeTickets.Presenter
             view.TicketFuncionarioNome = "";
             view.TicketQuantidade = 0;
             view.TicketSituacao = "";
-            view.TicketDataEntrega = "";
+            
         }
 
         private void LoadSelectedTicketToEdit(object sender, EventArgs e)
@@ -91,9 +90,9 @@ namespace GerenciadorDeTickets.Presenter
             view.TicketFuncionarioId = ticket.FuncionarioId.ToString();
             view.TicketQuantidade = ticket.Quantidade;
             view.TicketSituacao = ticket.Situacao.ToString();
-            view.TicketDataEntrega = ticket.DataEntrega.ToString("dd/MM/yyyy");
+            view.TicketDataEntrega = ticket.DataEntrega;
 
-            LoadTicketFuncionarioNome();
+            LoadFuncionarioNome();
 
             view.IsEdit = true;
             
@@ -106,7 +105,7 @@ namespace GerenciadorDeTickets.Presenter
             model.FuncionarioId = Convert.ToInt32(view.TicketFuncionarioId);
             model.Quantidade = Convert.ToInt32(view.TicketQuantidade);
             model.Situacao = Convert.ToChar(view.TicketSituacao);
-            //model.DataEntrega = DateTime.Parse(view.TicketDataEntrega);
+            model.DataEntrega = view.TicketDataEntrega;
 
             try
             {

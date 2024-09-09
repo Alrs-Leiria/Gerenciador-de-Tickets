@@ -40,7 +40,8 @@ namespace GerenciadorDeTickets._Repositories
             var sql = @"UPDATE tickets SET
                         funcionario_id=@funcionario_id,
                         quantidade=@quantidade,
-                        situacao=@situacao 
+                        situacao=@situacao,
+                        data_entrega=@data
                         WHERE id=@id";
 
             using (MySqlConnection connection = new MySqlConnection(connectionPath))
@@ -52,6 +53,7 @@ namespace GerenciadorDeTickets._Repositories
                     command.Parameters.AddWithValue("@funcionario_id", ticketModel.FuncionarioId);
                     command.Parameters.AddWithValue("@quantidade",     ticketModel.Quantidade);
                     command.Parameters.AddWithValue("@situacao",       ticketModel.Situacao);
+                    command.Parameters.AddWithValue("@data",           ticketModel.DataEntrega);
                     command.Parameters.AddWithValue("@id",             ticketModel.Id);
 
                     command.ExecuteNonQuery();

@@ -1,6 +1,6 @@
 ﻿namespace GerenciadorDeTickets.Relatorios.WinForms
 {
-    partial class FrmFuncionarioRelatorio
+    partial class FuncionarioList
     {
         /// <summary>
         /// Required designer variable.

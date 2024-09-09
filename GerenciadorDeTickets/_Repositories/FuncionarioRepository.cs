@@ -140,6 +140,7 @@ namespace GerenciadorDeTickets._Repositories
             }
             return funcionarioList;
         }
+
         FuncionarioModel IFuncionarioRepository.GetById(int id)
         {
             FuncionarioModel funcionarioModel = new FuncionarioModel();
@@ -166,6 +167,70 @@ namespace GerenciadorDeTickets._Repositories
                 }
             }
             return funcionarioModel;
+        }
+
+        public IEnumerable<RelatorioModel> GetTotalTickets(string value, string dataInicio, string dataFim, bool agrupar = false)
+        {
+            var relatorioList = new List<RelatorioModel>();
+            int funcionarioId = Convert.ToInt32(value);
+
+
+            var sql = "";
+            string verificaId = funcionarioId > 0 ? " f.id = @funcionarioId AND " : "";
+
+
+            if (!agrupar)
+            {
+                sql = @"SELECT f.*, t.data_entrega, t.quantidade AS quantidade 
+                        FROM funcionarios f
+                        INNER JOIN tickets t ON(f.id =  t.funcionario_id)
+                        WHERE " + verificaId +
+                        " t.data_entrega BETWEEN @data_inicio AND @data_fim " +
+                        "ORDER BY f.nome ASC ";
+            }
+            else
+            {
+                 sql = @"SELECT f.*, t.data_entrega, SUM(t.quantidade) AS quantidade 
+                        FROM funcionarios f
+                        INNER JOIN tickets t ON(f.id =  t.funcionario_id)
+                        WHERE " + verificaId +
+                        " t.data_entrega BETWEEN @data_inicio AND @data_fim  " +
+                        " GROUP BY f.nome " +
+                        " ORDER BY f.nome ASC ";
+            }
+
+            using (MySqlConnection connection = new MySqlConnection(connectionPath))
+            {
+                connection.Open();
+
+                using (var command = new MySqlCommand(sql, connection))
+                {
+                    if (funcionarioId > 0) 
+                    { 
+                        command.Parameters.AddWithValue("@funcionarioId", funcionarioId);
+                    }
+
+                    command.Parameters.AddWithValue("@data_inicio", dataInicio + " 00:00:00");
+                    command.Parameters.AddWithValue("@data_fim", dataFim + " 23:59:59");               
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            RelatorioModel relatorioModel = new RelatorioModel();
+
+                            relatorioModel.IdFuncionario= reader.GetInt32("id");
+                            relatorioModel.NomeFuncionario = reader.GetString("nome");
+                            relatorioModel.CpfFuncionario = reader.GetString("cpf");
+                            relatorioModel.QuantidadeTicket = reader.GetInt32("quantidade");
+                            relatorioModel.DataEntregaTicket = reader.GetDateTime("data_entrega");
+
+                            relatorioList.Add(relatorioModel);
+                        }
+                    }
+                }
+            }
+            return relatorioList;
         }
     }
 }

@@ -26,12 +26,13 @@ namespace GerenciadorDeTickets
 
         private void AssociateAndRaiseViewEvents()
         {
-            miFuncionarios.Click += delegate { ShowFuncionarioView?.Invoke(this, EventArgs.Empty); };
-            miTickets.Click      += delegate { ShowTicketView?.Invoke(this, EventArgs.Empty); };
-
+            btnFuncionarios.Click += delegate { ShowFuncionarioView?.Invoke(this, EventArgs.Empty); };
+            btnTickets.Click      += delegate { ShowTicketView?.Invoke(this, EventArgs.Empty); };
+            btnRelatorios.Click   += delegate { ShowRelatorioView?.Invoke(this, EventArgs.Empty); };
         }
         public event EventHandler ShowFuncionarioView;
         public event EventHandler ShowTicketView;
+        public event EventHandler ShowRelatorioView;
 
     }
 }

@@ -14,7 +14,7 @@ namespace GerenciadorDeTickets.Views
         string TicketFuncionarioNome {  get; set; }
         int TicketQuantidade { get; set; }
         string TicketSituacao { get; set; }
-        string TicketDataEntrega { get; set; }
+        DateTime TicketDataEntrega { get; set; }
 
         string SearchValue { get; set; }
         bool IsEdit { get; set; }
@@ -28,6 +28,7 @@ namespace GerenciadorDeTickets.Views
         event EventHandler CancelEvent;
         event EventHandler FuncionarioId_Leave;
 
+        void CloseForm();
         void SetTicketBidingSource(BindingSource ticketList);
         void Show();
     }

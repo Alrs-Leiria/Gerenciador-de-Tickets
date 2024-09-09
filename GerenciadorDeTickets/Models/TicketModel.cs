@@ -18,7 +18,7 @@ namespace GerenciadorDeTickets.Models
 
         [Required(ErrorMessage = "Funcionário é obrigatório!")]
         [Range(1, int.MaxValue, ErrorMessage = "Codigo do funcionario deve ser maior que zero!.")]
-        public int FuncionarioId { get; set; } 
+        public int FuncionarioId { get; set; }
 
         [Required(ErrorMessage = "A quantidade de tickets é obrigatória!")]
         [Range(1, int.MaxValue, ErrorMessage = "A quantidade de tickets deve ser maior que zero!.")]

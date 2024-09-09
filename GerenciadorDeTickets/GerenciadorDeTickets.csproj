@@ -119,7 +119,22 @@
   <ItemGroup>
     <Compile Include="Banco\Conexao.cs" />
     <Compile Include="Models\FuncionarioModel.cs" />
-    <Compile Include="Models\IFuncionarioRepository.cs" />
+    <Compile Include="Models\RelatorioModel.cs" />
+    <Compile Include="Presenter\RelatorioPresenter.cs" />
+    <Compile Include="Relatorios\WinForms\TotalTicketsFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\WinForms\TotalTicketsFuncionario.Designer.cs">
+      <DependentUpon>TotalTicketsFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IRelatorioView.cs" />
+    <Compile Include="Views\RelatorioView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RelatorioView.Designer.cs">
+      <DependentUpon>RelatorioView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Repositories\IFuncionarioRepository.cs" />
     <Compile Include="Models\TicketModel.cs" />
     <Compile Include="Presenter\Common\ModelDataValidation.cs" />
     <Compile Include="Presenter\PrincipalPresenter.cs" />
@@ -135,11 +150,11 @@
     <Compile Include="_Repositories\BaseRepository.cs" />
     <Compile Include="_Repositories\FuncionarioRepository.cs" />
     <Compile Include="Presenter\FuncionarioPresenter.cs" />
-    <Compile Include="Relatorios\WinForms\FrmFuncionarioRelatorio.cs">
+    <Compile Include="Relatorios\WinForms\FuncionarioList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Relatorios\WinForms\FrmFuncionarioRelatorio.Designer.cs">
-      <DependentUpon>FrmFuncionarioRelatorio.cs</DependentUpon>
+    <Compile Include="Relatorios\WinForms\FuncionarioList.Designer.cs">
+      <DependentUpon>FuncionarioList.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Views\FuncionarioView.cs">
@@ -156,18 +171,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Outros Forms\FrmInicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Outros Forms\FrmInicio.Designer.cs">
-      <DependentUpon>FrmInicio.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\IFuncionarioView.cs" />
     <Compile Include="_Repositories\ITicketRepository.cs" />
     <Compile Include="_Repositories\TicketRepository.cs" />
     <EmbeddedResource Include="Relatorios\ReportViewer\RelatorioFuncionarios.rdlc" />
-    <EmbeddedResource Include="Relatorios\WinForms\FrmFuncionarioRelatorio.resx">
-      <DependentUpon>FrmFuncionarioRelatorio.cs</DependentUpon>
+    <EmbeddedResource Include="Relatorios\ReportViewer\TotalTickets.rdlc" />
+    <EmbeddedResource Include="Relatorios\WinForms\FuncionarioList.resx">
+      <DependentUpon>FuncionarioList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\WinForms\TotalTicketsFuncionario.resx">
+      <DependentUpon>TotalTicketsFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncionarioView.resx">
       <DependentUpon>FuncionarioView.cs</DependentUpon>
@@ -184,14 +197,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\Outros Forms\FrmInicio.resx">
-      <DependentUpon>FrmInicio.cs</DependentUpon>
+    <EmbeddedResource Include="Views\RelatorioView.resx">
+      <DependentUpon>RelatorioView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TicketView.resx">
       <DependentUpon>TicketView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\GerenciadorDeTickets.Models.Funcionario.datasource" />
+    <None Include="Properties\DataSources\GerenciadorDeTickets.Models.FuncionarioModel.datasource" />
+    <None Include="Properties\DataSources\GerenciadorDeTickets.Models.RelatorioModel.datasource" />
+    <None Include="Properties\DataSources\GerenciadorDeTickets.Models.TicketModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

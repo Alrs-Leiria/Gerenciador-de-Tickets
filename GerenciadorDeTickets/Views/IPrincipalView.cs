@@ -10,6 +10,7 @@ namespace GerenciadorDeTickets.Views
     {
         event EventHandler ShowFuncionarioView;
         event EventHandler ShowTicketView;
+        event EventHandler ShowRelatorioView;
 
     }
 }

@@ -50,8 +50,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnFechar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpFuncionarioList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarios)).BeginInit();
@@ -64,10 +64,10 @@
             this.tabControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tabControl1.Controls.Add(this.tpFuncionarioList);
             this.tabControl1.Controls.Add(this.tpFuncionarioDetalhes);
-            this.tabControl1.Location = new System.Drawing.Point(14, 54);
+            this.tabControl1.Location = new System.Drawing.Point(14, 59);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(591, 374);
+            this.tabControl1.Size = new System.Drawing.Size(587, 374);
             this.tabControl1.TabIndex = 0;
             // 
             // tpFuncionarioList
@@ -81,7 +81,7 @@
             this.tpFuncionarioList.Location = new System.Drawing.Point(4, 22);
             this.tpFuncionarioList.Name = "tpFuncionarioList";
             this.tpFuncionarioList.Padding = new System.Windows.Forms.Padding(3);
-            this.tpFuncionarioList.Size = new System.Drawing.Size(583, 348);
+            this.tpFuncionarioList.Size = new System.Drawing.Size(579, 348);
             this.tpFuncionarioList.TabIndex = 0;
             this.tpFuncionarioList.Text = "Listagem";
             this.tpFuncionarioList.UseVisualStyleBackColor = true;
@@ -296,19 +296,10 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnFechar);
-            this.panel1.Location = new System.Drawing.Point(14, 9);
+            this.panel1.Location = new System.Drawing.Point(14, 14);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(587, 39);
             this.panel1.TabIndex = 18;
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Location = new System.Drawing.Point(554, 6);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(33, 30);
-            this.btnFechar.TabIndex = 0;
-            this.btnFechar.Text = "X";
-            this.btnFechar.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -320,11 +311,20 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Funcionarios";
             // 
+            // btnFechar
+            // 
+            this.btnFechar.Location = new System.Drawing.Point(554, 6);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(33, 30);
+            this.btnFechar.TabIndex = 0;
+            this.btnFechar.Text = "X";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            // 
             // FuncionarioView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 447);
+            this.ClientSize = new System.Drawing.Size(619, 446);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
