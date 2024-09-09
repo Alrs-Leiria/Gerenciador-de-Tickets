@@ -1,7 +1,7 @@
 
 # Gerenciador de Tickets
 
-Projeto para um gerenciador de Tickets entregues refeição. 
+Projeto para um gerenciador de Tickets entregues. 
 
 O projeto foi desenvolvido utilizando:
 
@@ -19,10 +19,10 @@ A estrutura do projeto foi construída se baseando no modelo MVP(Model-View-Pres
 
 - Criar, editar, listar, buscar(por nome, e id do funcionário) e imprimir funcionários.
 - Criar, editar, listar e buscar(por nome de funcionário, e id do ticket) tickets entregues
-- Emitir relatório de ticketes entregues por período.
+- Emitir relatório de ticketes entregues por período(Detalhado ou agrupado).
 
 ## Requisitos
-- .NET framewor 4.8 instaldo na maquina.
+- .NET framewor 4.8 instalado na máquina.
 - Visual Studio instalado com a opção (.NET desktop development).
 
 ## Configuração do projeto
