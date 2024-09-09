@@ -12,6 +12,55 @@ namespace GerenciadorDeTickets.Views
 {
     public partial class TicketView : Form, ITicketView
     {
+        public string TicketId
+        {
+            get { return lblId.Text; }
+            set { lblId.Text = value; }
+        }
+        public string TicketFuncionarioId
+        {
+            get { return txtFuncionarioId.Text; }
+            set { txtFuncionarioId.Text = value; }
+        }
+
+        public string TicketFuncionarioNome
+        {
+            get { return txtFuncionairoNome.Text; }
+            set { txtFuncionairoNome.Text = value; }
+        }
+        public int TicketQuantidade
+        {
+            get { return (int)nupQuantidade.Value; }
+            set { nupQuantidade.Value = value; }
+        }
+        public string TicketSituacao
+        {
+            get { return (((KeyValuePair<string, string>)cbSituacao.SelectedItem).Value); }
+            set
+            {
+                foreach (KeyValuePair<string, string> item in cbSituacao.Items)
+                {
+                    if (item.Value == value)
+                    {
+                        cbSituacao.SelectedItem = item;
+                        break;
+                    }
+                }
+            }
+        }
+        public DateTime TicketDataEntrega
+        {
+            get { return dtDataEntrega.Value; }
+            set { dtDataEntrega.Value = value; }
+        }
+        public string SearchValue
+        {
+            get { return txtBuscar.Text; }
+            set { txtBuscar.Text = value; }
+        }
+        public bool IsEdit { get; set; }
+        public bool IsSuccessful { get; set; }
+        public string Message { get; set; }
         public TicketView()
         {
             InitializeComponent();
@@ -89,6 +138,11 @@ namespace GerenciadorDeTickets.Views
             btnFechar.Click += delegate { CloseForm(); };
         }
 
+        public void SetTicketBidingSource(BindingSource ticketList)
+        {
+            dgvTickets.DataSource = ticketList;
+        }
+
         public void CloseForm()
         {
             this.Close();
@@ -102,67 +156,12 @@ namespace GerenciadorDeTickets.Views
             cbSituacao.ValueMember = "Value";
         }
 
-        public string TicketId 
-        {
-            get { return lblId.Text; }
-            set { lblId.Text = value; }
-        }
-        public string TicketFuncionarioId 
-        {
-            get { return txtFuncionarioId.Text; }
-            set { txtFuncionarioId.Text = value; }
-        }
-
-        public string TicketFuncionarioNome
-        {
-            get { return txtFuncionairoNome.Text; }
-            set { txtFuncionairoNome.Text = value; }
-        }
-        public int TicketQuantidade
-        {
-            get { return (int)nupQuantidade.Value; }
-            set { nupQuantidade.Value = value; }
-        }
-        public string TicketSituacao 
-        {
-            get { return (((KeyValuePair<string, string>)cbSituacao.SelectedItem).Value); }
-            set
-            {
-                foreach (KeyValuePair<string, string> item in cbSituacao.Items)
-                {
-                    if (item.Value == value)
-                    {
-                        cbSituacao.SelectedItem = item;
-                        break;
-                    }
-                }
-            }
-        }
-        public DateTime TicketDataEntrega
-        {
-            get { return dtDataEntrega.Value; }
-            set { dtDataEntrega.Value = value; }
-        }
-        public string SearchValue
-        {
-            get { return txtBuscar.Text; }
-            set { txtBuscar.Text = value; }
-        }
-        public bool IsEdit { get; set; }
-        public bool IsSuccessful { get; set; }
-        public string Message { get; set; }
-
         public event EventHandler SearchEvent;
         public event EventHandler AddNewEvent;
         public event EventHandler EditEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
         public event EventHandler FuncionarioId_Leave;
-
-        public void SetTicketBidingSource(BindingSource ticketList)
-        {
-            dgvTickets.DataSource = ticketList;
-        }
 
         private static TicketView instance;
 
@@ -183,10 +182,7 @@ namespace GerenciadorDeTickets.Views
                 }
                 instance.BringToFront();
             }
-
             return instance;
-
         }
-
     }
 }

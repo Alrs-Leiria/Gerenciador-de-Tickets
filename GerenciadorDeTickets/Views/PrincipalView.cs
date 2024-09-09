@@ -1,5 +1,4 @@
-﻿using GerenciadorDeTickets.Banco;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +29,7 @@ namespace GerenciadorDeTickets
             btnTickets.Click      += delegate { ShowTicketView?.Invoke(this, EventArgs.Empty); };
             btnRelatorios.Click   += delegate { ShowRelatorioView?.Invoke(this, EventArgs.Empty); };
         }
+
         public event EventHandler ShowFuncionarioView;
         public event EventHandler ShowTicketView;
         public event EventHandler ShowRelatorioView;

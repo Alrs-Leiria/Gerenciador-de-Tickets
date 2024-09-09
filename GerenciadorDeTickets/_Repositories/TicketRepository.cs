@@ -64,7 +64,7 @@ namespace GerenciadorDeTickets._Repositories
         public IEnumerable<TicketModel> GetAll()
         {
             var ticketsList = new List<TicketModel>();
-            var sql = @"SELECT * FROM tickets  ORDER BY id asc";
+            var sql = @"SELECT * FROM tickets  ORDER BY id DESC";
             using (MySqlConnection connection = new MySqlConnection(connectionPath))
             {
                 connection.Open();
@@ -107,7 +107,7 @@ namespace GerenciadorDeTickets._Repositories
 
             var sql = @"SELECT t.*, f.nome FROM tickets t
                         INNER JOIN funcionarios f ON(t.funcionario_id = f.id)
-                        WHERE t.id=@id OR f.nome LIKE @nome";
+                        WHERE t.id=@id OR f.nome LIKE @nome ORDER BY id DESC";
             using (MySqlConnection connection = new MySqlConnection(connectionPath))
             {
                 connection.Open();

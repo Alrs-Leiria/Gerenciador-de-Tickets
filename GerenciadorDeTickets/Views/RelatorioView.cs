@@ -13,6 +13,39 @@ namespace GerenciadorDeTickets.Views
 {
     public partial class RelatorioView : Form, IRelatorioView
     {
+        public DateTime DataInicio
+        {
+            get { return dtInicial.Value; }
+            set { dtInicial.Value = value; }
+        }
+        public DateTime DataFim
+        {
+            get { return dtFinal.Value; }
+            set { dtFinal.Value = value; }
+        }
+        public string FuncionarioId
+        {
+            get { return txtFuncionarioId.Text; }
+            set { txtFuncionarioId.Text = value; }
+        }
+        public string FuncionarioNome
+        {
+            get { return txtFuncionairoNome.Text; }
+            set { txtFuncionairoNome.Text = value; }
+        }
+
+        public string TotalQuantidadeTickets
+        {
+            get { return lblTotalQuantidadeTickets.Text; }
+            set { lblTotalQuantidadeTickets.Text = value; }
+        }
+
+        public bool IsChecked
+        {
+            get { return cbAgrupar.Checked; }
+            set { cbAgrupar.Checked = value; }
+        }
+
         public RelatorioView()
         {
             InitializeComponent();
@@ -36,46 +69,36 @@ namespace GerenciadorDeTickets.Views
             btnFechar.Click += delegate { CloseForm(); };
         }
 
-
         public  void CloseForm()
         {
             this.Close();
         }
-        public DateTime DataInicio 
-        {
-            get { return dtInicial.Value; } 
-            set {  dtInicial.Value = value; }
-        }
-        public DateTime DataFim 
-        {
-            get { return dtFinal.Value; }
-            set { dtFinal.Value = value; }
-        }
-        public string FuncionarioId 
-        { 
-            get { return txtFuncionarioId.Text; } 
-            set {  txtFuncionarioId.Text = value;} 
-        }
-        public string FuncionarioNome
-        {
-            get { return txtFuncionairoNome.Text; }
-            set { txtFuncionairoNome.Text = value; }
-        }
 
-        public string TotalQuantidadeTickets
-        {
-            get { return lblTotalQuantidadeTickets.Text; }
-            set { lblTotalQuantidadeTickets.Text = value; }
-        }
-
-        public bool IsChecked 
-        {
-            get { return cbAgrupar.Checked; }
-            set { cbAgrupar.Checked = value; }
-        }
         public void SetDadosBidingSource(BindingSource dataList)
         {
             dgvRelatorio.DataSource = dataList;
+        }
+
+        private void cbTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbTodos.Checked)
+            {
+                txtFuncionarioId.Enabled = false;
+                txtFuncionarioId.Text = "0";
+                txtFuncionairoNome.Text = "Todos";
+
+                cbAgrupar.Enabled = true;
+                cbAgrupar.Visible = true;
+
+            }
+            else
+            {
+                txtFuncionarioId.Enabled = true;
+                txtFuncionairoNome.Text = "";
+                cbAgrupar.Enabled = false;
+                cbAgrupar.Visible = false;
+                cbAgrupar.Checked = false;
+            }
         }
 
         public event EventHandler<EventArgs> LoadRelatorioEvent;
@@ -101,28 +124,6 @@ namespace GerenciadorDeTickets.Views
                 instance.BringToFront();
             }
             return instance;
-        }
-
-        private void cbTodos_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbTodos.Checked) 
-            {
-                txtFuncionarioId.Enabled = false;
-                txtFuncionarioId.Text = "0";
-                txtFuncionairoNome.Text = "Todos";
-
-                cbAgrupar.Enabled = true;
-                cbAgrupar.Visible = true;
-
-            }
-            else
-            {
-                txtFuncionarioId.Enabled = true;
-                txtFuncionairoNome.Text = "";
-                cbAgrupar.Enabled = false;
-                cbAgrupar.Visible = false;
-                cbAgrupar.Checked = false;
-            }
         }
     }
 }

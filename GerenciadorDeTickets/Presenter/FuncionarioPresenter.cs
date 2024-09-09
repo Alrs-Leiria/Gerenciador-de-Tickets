@@ -48,7 +48,7 @@ namespace GerenciadorDeTickets.Presenter
             dt.Columns.Add("Cpf");
             dt.Columns.Add("Situacao");
             dt.Columns.Add("DataAlteracao");
-            string datas = "";
+
             foreach (FuncionarioModel funcionario in funcionarioBindingSource.List)
             {
                 dt.Rows.Add(
@@ -58,10 +58,7 @@ namespace GerenciadorDeTickets.Presenter
                     funcionario.Situacao.ToString(),
                     funcionario.DataAlteracao.ToString("dd/MM/yyyy") 
                 );
-
-                datas = datas + funcionario.DataAlteracao.ToString("dd/MM/yyyy") + "\n";
             }
-            MessageBox.Show(datas);
             return dt;
         } 
         private void PrintEvent(object sender, EventArgs e)
@@ -72,7 +69,6 @@ namespace GerenciadorDeTickets.Presenter
                 frm.ShowDialog();
             }
         }
-
         private void AddNewFuncionario(object sender, EventArgs e)
         {
             view.IsEdit = false;

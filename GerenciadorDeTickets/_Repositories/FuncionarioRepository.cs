@@ -8,7 +8,6 @@ using System.Data;
 using System.Drawing;
 using GerenciadorDeTickets.Models;
 using MySql.Data.MySqlClient;
-using GerenciadorDeTickets.Banco;
 using Google.Protobuf.WellKnownTypes;
 using System.Windows.Forms;
 
@@ -68,7 +67,7 @@ namespace GerenciadorDeTickets._Repositories
         IEnumerable<FuncionarioModel> IFuncionarioRepository.GetAll()
         {
             var funcionarioList = new List<FuncionarioModel>();
-            var sql = @"SELECT * FROM funcionarios  ORDER BY id desc";
+            var sql = @"SELECT * FROM funcionarios  ORDER BY id DESC";
             using (MySqlConnection connection = new MySqlConnection(connectionPath))
             {
                 connection.Open();
@@ -111,7 +110,7 @@ namespace GerenciadorDeTickets._Repositories
 
             var sql = @"SELECT * FROM funcionarios 
                                         WHERE id=@id OR nome LIKE @nome
-                                        ORDER BY id desc";
+                                        ORDER BY id DESC";
             using (MySqlConnection connection = new MySqlConnection(connectionPath))
             {
                 connection.Open();

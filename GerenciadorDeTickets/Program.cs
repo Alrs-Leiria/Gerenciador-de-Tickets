@@ -8,7 +8,7 @@ using GerenciadorDeTickets.Presenter;
 using GerenciadorDeTickets._Repositories;
 using GerenciadorDeTickets.Views;
 using MySql.Data.MySqlClient;
-using GerenciadorDeTickets.Banco;
+
 
 
 namespace GerenciadorDeTickets
