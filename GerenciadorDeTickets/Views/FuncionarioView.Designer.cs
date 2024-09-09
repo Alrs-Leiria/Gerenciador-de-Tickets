@@ -52,6 +52,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpFuncionarioList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarios)).BeginInit();
@@ -72,6 +73,7 @@
             // 
             // tpFuncionarioList
             // 
+            this.tpFuncionarioList.Controls.Add(this.label4);
             this.tpFuncionarioList.Controls.Add(this.btnImprimir);
             this.tpFuncionarioList.Controls.Add(this.btnBuscar);
             this.tpFuncionarioList.Controls.Add(this.btnAlterar);
@@ -166,7 +168,7 @@
             this.tpFuncionarioDetalhes.Location = new System.Drawing.Point(4, 22);
             this.tpFuncionarioDetalhes.Name = "tpFuncionarioDetalhes";
             this.tpFuncionarioDetalhes.Padding = new System.Windows.Forms.Padding(3);
-            this.tpFuncionarioDetalhes.Size = new System.Drawing.Size(583, 348);
+            this.tpFuncionarioDetalhes.Size = new System.Drawing.Size(579, 348);
             this.tpFuncionarioDetalhes.TabIndex = 1;
             this.tpFuncionarioDetalhes.Text = "Detalhes";
             this.tpFuncionarioDetalhes.UseVisualStyleBackColor = true;
@@ -320,6 +322,17 @@
             this.btnFechar.Text = "X";
             this.btnFechar.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(-1, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(186, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Busca por NOME ou ID do funcionario";
+            // 
             // FuncionarioView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,5 +381,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -52,6 +52,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
+            this.txtDataEntrega = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tpTicketList.SuspendLayout();
@@ -102,6 +104,7 @@
             // 
             // tpTicketList
             // 
+            this.tpTicketList.Controls.Add(this.label4);
             this.tpTicketList.Controls.Add(this.btnBuscar);
             this.tpTicketList.Controls.Add(this.btnAlterar);
             this.tpTicketList.Controls.Add(this.txtBuscar);
@@ -170,6 +173,7 @@
             // 
             // tpTicketDetalhes
             // 
+            this.tpTicketDetalhes.Controls.Add(this.txtDataEntrega);
             this.tpTicketDetalhes.Controls.Add(this.dtDataEntrega);
             this.tpTicketDetalhes.Controls.Add(this.txtFuncionarioId);
             this.tpTicketDetalhes.Controls.Add(this.nupQuantidade);
@@ -318,6 +322,28 @@
             this.lblNome.TabIndex = 26;
             this.lblNome.Text = "Funcionario";
             // 
+            // txtDataEntrega
+            // 
+            this.txtDataEntrega.Enabled = false;
+            this.txtDataEntrega.Location = new System.Drawing.Point(206, 203);
+            this.txtDataEntrega.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDataEntrega.MaxLength = 255;
+            this.txtDataEntrega.Multiline = true;
+            this.txtDataEntrega.Name = "txtDataEntrega";
+            this.txtDataEntrega.Size = new System.Drawing.Size(270, 26);
+            this.txtDataEntrega.TabIndex = 43;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(2, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(228, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Busca por NOME do funcionario ou ID do ticket";
+            // 
             // TicketView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,5 +392,7 @@
         private System.Windows.Forms.NumericUpDown nupQuantidade;
         private System.Windows.Forms.TextBox txtFuncionarioId;
         private System.Windows.Forms.DateTimePicker dtDataEntrega;
+        private System.Windows.Forms.TextBox txtDataEntrega;
+        private System.Windows.Forms.Label label4;
     }
 }

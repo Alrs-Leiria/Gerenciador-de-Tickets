@@ -39,7 +39,6 @@ namespace GerenciadorDeTickets.Views
                 cbSituacao.Enabled = false;
 
                 dtDataEntrega.Visible = false;
-                dtDataEntrega.Enabled = false;
 
                 lblTxtData.Visible = false;
             };
@@ -56,7 +55,6 @@ namespace GerenciadorDeTickets.Views
                     cbSituacao.Enabled = true;
 
                     dtDataEntrega.Visible = true;
-                    dtDataEntrega.Enabled = true;
 
                     lblTxtData.Visible = true;
                 }
